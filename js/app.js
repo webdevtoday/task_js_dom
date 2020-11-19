@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updatestate (state) {
         if (!state) return;
+        if (state.page === '') route.to('home');
         route.to(state.page.slice(1))
     };
 
@@ -25,8 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         history.pushState(state, '', state.page);
         updatestate(state);
     });
+    
     window.addEventListener('popstate', (e) => {
         updatestate(e.state);
     });
+
     updatestate({page: location.hash});
 });
