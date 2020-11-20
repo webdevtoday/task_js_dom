@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const controller = new Controller(mainContent);
     const route = new Route(controller, {
         'home': 'Home',
-        'main': 'Main',
+        'about': 'About',
     });
 
     function updatestate (state) {
